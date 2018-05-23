@@ -10,7 +10,7 @@ public class RailwaySubscribeDemo {
 	public static void main(String[] args) {
 		String appkey = "您的appkey";
 		String appsecret = "您的appsecret";
-		String url = "https://gateway.logink.org/message/sms/sendSms";
+		String url = "https://gateway.logink.org/railway-query/subscribe";
 		//请求的body,json格式
 		String body = "{\"taskId\":\"4028830b5f512c68015f512f22e40000\"," // 订阅标识符
 				+ "\"railwayWagonNumber\":\"4936338\", " // 车号
