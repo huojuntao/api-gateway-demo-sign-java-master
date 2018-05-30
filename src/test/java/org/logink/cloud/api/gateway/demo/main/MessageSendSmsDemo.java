@@ -4,7 +4,9 @@ import org.logink.cloud.api.gateway.demo.util.PostUtil;
 
 /**
 * logink cloud gateway api demo 
-* github path:https://github.com/huojuntao/api-gateway-demo-sign-java-master
+* 重要提示如下：
+* 代码请从 github path:https://github.com/huojuntao/api-gateway-demo-sign-java-master 下载
+* 对应测试类： https://github.com/huojuntao/api-gateway-demo-sign-java-master/blob/master/src/test/java/org/logink/cloud/api/gateway/demo/main/MessageSendSmsDemo.java
 */
 public class MessageSendSmsDemo {
 	public static void main(String[] args) {
@@ -18,6 +20,7 @@ public class MessageSendSmsDemo {
 	    		+ "\"account\":\"******\","   //账号
 	    		+ "\"password\":\"******\"}";    //密码
 		try {
+			// PostUtil封装了header设置和签名计算
 			PostUtil.postString(url, body, appkey, appsecret);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
