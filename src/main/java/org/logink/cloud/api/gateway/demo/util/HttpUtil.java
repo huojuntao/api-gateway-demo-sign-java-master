@@ -68,6 +68,8 @@ import org.logink.cloud.api.gateway.demo.constant.HttpHeader;
 import org.logink.cloud.api.gateway.demo.constant.HttpMethod;
 import org.logink.cloud.api.gateway.demo.constant.SystemHeader;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * Http工具类
  */
@@ -387,7 +389,7 @@ public class HttpUtil {
         headers.put(SystemHeader.X_CA_KEY, appKey);
         headers.put(SystemHeader.X_CA_SIGNATURE,
                 SignUtil.sign(appSecret, method, path, headers, querys, bodys, signHeaderPrefixList));
-
+        System.out.println("Header: " + JSON.toJSONString(headers));
         return headers;
     }
 

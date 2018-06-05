@@ -2,7 +2,10 @@ package org.logink.cloud.api.gateway.demo.junit;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.logink.cloud.api.gateway.demo.Response;
 import org.logink.cloud.api.gateway.demo.util.PostUtil;
+
+import com.alibaba.fastjson.JSON;
 
 public class Demo {
 	
@@ -18,7 +21,9 @@ public class Demo {
 	    		+ "\"param4\":\"******\","   ///参数4
 	    		+ "\"param5\":\"******\"}";    //参数5
 		try {
-			PostUtil.postString(url, body, appkey, appsecret);
+			// PostUtil封装了header设置和签名计算,然后发送request并获取response
+			Response response = PostUtil.postString(url, body, appkey, appsecret);
+			System.out.println("response = " + JSON.toJSONString(response));
 		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

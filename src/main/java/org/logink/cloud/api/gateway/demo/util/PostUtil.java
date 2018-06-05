@@ -49,6 +49,8 @@ public class PostUtil {
      */
     public static Response postString(String URL, String BODY,
     		String APP_KEY, String APP_SECRET) throws Exception {
+    	System.out.println("Request:");
+    	System.out.println("Url: " + URL);
     	String PATH = URL.substring(HOST.length(), URL.length());
         Map<String, String> headers = new HashMap<String, String>();
         //（必填）根据期望的Response内容类型设置
@@ -81,7 +83,9 @@ public class PostUtil {
 
         //调用服务端
         Response response = Client.execute(request);
-        System.out.println("response = " + JSON.toJSONString(response));
+        System.out.println("Body: " + BODY);
+        System.out.println("");
+        System.out.println("Response: ");
         return response;
     }
    
